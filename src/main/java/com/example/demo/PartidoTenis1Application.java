@@ -17,10 +17,7 @@ public class PartidoTenis1Application {
 		SpringApplication.run(PartidoTenis1Application.class, args);
 		
 		read = new Scanner(System.in);
-		
-		System.out.print((int)(Math.random()*100)+" ");
-		System.out.print((int)(Math.random()*100)+" ");
-		System.out.print((int)(Math.random()*100)+" ");
+		Boolean revancha = false;
 		
 		
 
@@ -50,10 +47,33 @@ public class PartidoTenis1Application {
 		
 		//Partido partido = new Partido(torneo, jugador1, jugador2, cantS, p_j1, p_j2);
 		Partido partido = PartidoService.create(torneo, jugador1, jugador2, cantS, p_j1, p_j2);
-		
-
-		
 		PartidoService.arrancaPartido(partido);
+		
+		System.out.print("\nesteQUIERES JUGAR LA REVANCHA? :");
+		
+		String rta2 = read.nextLine();
+		String rta = read.nextLine();
+		
+		if(rta.equalsIgnoreCase("si")) {
+			revancha = true;
+		}else {
+			revancha = false;
+		}
+
+		while (revancha) {
+			
+			PartidoService.arrancaPartido(partido);
+			
+			System.out.print("\nQUIERES JUGAR LA REVANCHA?");
+			String rta1 = read.nextLine().toLowerCase();
+			
+			if(rta1.equalsIgnoreCase("si")) {
+				revancha = true;
+			}else {
+				revancha = false;
+			}
+		}
+			
 		
 }
 

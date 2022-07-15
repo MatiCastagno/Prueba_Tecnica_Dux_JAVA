@@ -101,7 +101,7 @@ public class PartidoService {
 					partido.setSets_J2(partido.getSets_J2() + 1);
 			}	
 			
-				 //un resultado parcual de los set de cada jugador
+				 //un resultado parcial de los set de cada jugador
 			System.out.print("\nSETS " + partido.getJugador1() + ": " + partido.getSets_J1());
 			System.out.print("\nSETS " + partido.getJugador2() + ": " + partido.getSets_J2());
 		
